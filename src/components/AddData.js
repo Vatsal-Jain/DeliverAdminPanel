@@ -15,6 +15,8 @@ const AddData = () => {
     const [itemPrice ,setItemPrice] = useState('');
     const [itemBrandName ,setItemBrandName] = useState('');
     const [itemImage ,setItemImage] = useState(null);
+    // const [itemImage2 ,setItemImage2] = useState(null);
+    // const [itemImage3 ,setItemImage3] = useState(null);
     const [itemCategory ,setItemCategory] = useState('');
     const [itemPrescription ,setItemPrescription] = useState('');
     const [bestSelling ,setBestSelling] = useState('');
@@ -49,7 +51,9 @@ const AddData = () => {
         itemPrice,
         bestSelling,
         mustHave,
-        itemImageUrl: url
+        itemImageUrl: url,
+        itemImageUrl2: url,
+        itemImageUrl3: url
     }
    console.log(itemData)
   try{
@@ -177,12 +181,27 @@ alert(error.message);
         name='item_prescription' />
         <br />
 
-        <label>Image</label>
+        <label>MainImage</label>
         <input type='file' name='item_image'
         className='inputtag'
         onChange={(e) => {setItemImage(e.target.files[0])}}
         />
         <br />
+
+{/*         
+        <label>Image 2</label>
+        <input type='file' name='item_image'
+        className='inputtag'
+        onChange={(e) => {setItemImage2(e.target.files[0])}}
+        />
+        <br />
+
+        <label>Image 3</label>
+        <input type='file' name='item_image'
+        className='inputtag'
+        onChange={(e) => {setItemImage3(e.target.files[0])}}
+        />
+        <br /> */}
 
         <label>Price</label>
         <input type='text' name='item_price'
