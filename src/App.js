@@ -4,6 +4,7 @@ import AddData from './components/AddData';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import OrderSection from './components/Orders/OrderSection';
 import ShowDetails from './components/Orders/ShowDetails';
+import MedicineData from './components/MedicineData/MedicineData';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path='/addItem' element={<AddData/>} />
       <Route path='/orders' element={<OrderSection/>} />
       <Route path='/orderdetails/:orderid' element={<ShowDetails/>} />
+      <Route path='/medicinedata' element={<MedicineData/>} />
 
       </Routes>
       </BrowserRouter>

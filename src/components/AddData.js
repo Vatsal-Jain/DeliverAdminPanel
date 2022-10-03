@@ -72,6 +72,16 @@ alert(error.message);
         })
     }
 
+    // setBestSelling(null)
+    // setItemBrandName(null)
+    // setItemImage(null)
+    // setItemComposition(null)
+    // setItemDescription(null)
+    // setItemImageUrl(null)
+    // setItemName(null)
+    // setItemPrescription(null)
+    // setItemPrescription(null)
+    // setItemPrice(null)
     
    }
 

@@ -22,6 +22,10 @@ const Navbar = () => {
     <p>Add Item</p>
 </Link>
 
+<Link to='/medicinedata' style={{textDecoration:'none'}}>
+    <p>Medicine Data</p>
+</Link>
+
 </div>
       
     </div>
