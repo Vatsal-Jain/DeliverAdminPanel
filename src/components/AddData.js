@@ -125,6 +125,7 @@ alert(error.message);
   <option value="skincare">Skin Care</option>
   <option value="babycare">Baby Care</option>
   <option value="ayurvedic">Ayurvedic</option>
+  <option value="surgical">Surgical</option>
 </select>
 <br />
 
