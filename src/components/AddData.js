@@ -5,6 +5,8 @@ import { db,storage } from '../Firebase/firebaseConfig';
 import { addDoc,collection } from 'firebase/firestore';
 import {ref,uploadBytes, getDownloadURL} from 'firebase/storage'
 
+import Navbar from './Navbar/Navbar';
+
 const AddData = () => {
 
     const [itemName ,setItemName] = useState('');
@@ -15,9 +17,12 @@ const AddData = () => {
     const [itemImage ,setItemImage] = useState(null);
     const [itemCategory ,setItemCategory] = useState('');
     const [itemPrescription ,setItemPrescription] = useState('');
+    const [bestSelling ,setBestSelling] = useState('');
+    const [mustHave ,setMustHave] = useState('');
     const[itemImageUrl,setItemImageUrl] = useState('');
 
    const handleSubmit =(e) => {
+    console.log(itemImage)
     e.preventDefault()
  
     if(itemImage == null){
@@ -42,6 +47,8 @@ const AddData = () => {
         itemDescription,
         itemPrescription,
         itemPrice,
+        bestSelling,
+        mustHave,
         itemImageUrl: url
     }
    console.log(itemData)
@@ -64,9 +71,13 @@ alert(error.message);
     
    }
 
-    console.log(itemName,itemBrandName,itemCategory,itemComposition,itemDescription,itemPrescription,itemPrice)
+  
+
+    console.log(itemName,itemBrandName,itemCategory,itemComposition,itemDescription,itemPrescription,itemPrice,itemImage)
     return (
-    <div className='form-outer'>
+      <div>
+<Navbar/>
+  <div className='form-outer'>
        <h1>Add Data</h1>
        <form className='form-inner'>
         <label>Item Name</label>
@@ -83,6 +94,10 @@ alert(error.message);
   <option value="Nulife Pharmacueticals">Nulife Pharmacueticals</option>
   <option value="Kivi Labs">Kivi Labs</option>
   <option value="Juggat Pharma">Juggat Pharma</option>
+  <option value="Bsa Pharma">Bsa Pharma</option>
+  <option value="Dr Trust">Dr Trust</option>
+  <option value="Lyra Laboratories">Lyra Laboratories</option>
+  <option value="PandG">P {'&'} G</option>
 </select>
         
         
@@ -99,6 +114,34 @@ alert(error.message);
   <option value="ayurvedic">Ayurvedic</option>
 </select>
 <br />
+
+
+<label form="bestselling">Best Selling</label>
+
+<select name="selectbestselling" id="selectbestselling"
+     onChange={(e) => {setBestSelling(e.target.value)}}
+>
+<option value="select2">Select</option>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+  
+</select>
+<br />
+
+<label form="musthave">Must Have</label>
+
+<select name="selectmusthave" id="selectmusthave"
+     onChange={(e) => {setMustHave(e.target.value)}}
+>
+<option value="select3">Select</option>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+  
+</select>
+<br />
+ 
+ 
+
         <label>Item Description</label>
         <input 
              onChange={(e) => {setItemDescription(e.target.value)}}
@@ -138,6 +181,9 @@ alert(error.message);
         <button onClick={handleSubmit}>Add Item</button>
        </form>
     </div>
+
+      </div>
+   
   )
 }
 
