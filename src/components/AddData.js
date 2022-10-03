@@ -98,6 +98,19 @@ alert(error.message);
   <option value="Dr Trust">Dr Trust</option>
   <option value="Lyra Laboratories">Lyra Laboratories</option>
   <option value="PandG">P {'&'} G</option>
+  <option value="Jagdale Industries">Jagdale Industries</option>
+  <option value="Sundyota Numandis">Sundyota Numandis</option> 
+  <option value="Mcw Healthcare">Mcw Healthcare</option> 
+  <option value="Indechemie">Indechemie</option> 
+  <option value="Frenz Biotech">Frenz Biotech</option> 
+  <option value="Pharmed Ltd">Pharmed Ltd</option> 
+  <option value="Aster Medipharm">Aster Medipharm</option> 
+  <option value="Puremed Biotech">Puremed Biotech</option> 
+  <option value="Generic">Generic Product</option> 
+
+ 
+ 
+  
 </select>
         
         
