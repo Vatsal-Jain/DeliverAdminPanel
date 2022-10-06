@@ -53,7 +53,8 @@ const AddData = () => {
         mustHave,
         itemImageUrl: url,
         itemImageUrl2: url,
-        itemImageUrl3: url
+        itemImageUrl3: url,
+        productID: '' 
     }
    console.log(itemData)
   try{
@@ -104,23 +105,23 @@ alert(error.message);
      onChange={(e) => {setItemBrandName(e.target.value)}}
 >
 <option value="selectbrand">Select Brand</option>
-  <option value="Torrent Pharma">Torrent Pharma</option>
-  <option value="Nulife Pharmacueticals">Nulife Pharmacueticals</option>
-  <option value="Kivi Labs">Kivi Labs</option>
-  <option value="Juggat Pharma">Juggat Pharma</option>
-  <option value="Bsa Pharma">Bsa Pharma</option>
-  <option value="Dr Trust">Dr Trust</option>
-  <option value="Lyra Laboratories">Lyra Laboratories</option>
-  <option value="PandG">P {'&'} G</option>
-  <option value="Jagdale Industries">Jagdale Industries</option>
-  <option value="Sundyota Numandis">Sundyota Numandis</option> 
-  <option value="Mcw Healthcare">Mcw Healthcare</option> 
-  <option value="Indechemie">Indechemie</option> 
-  <option value="Frenz Biotech">Frenz Biotech</option> 
-  <option value="Pharmed Ltd">Pharmed Ltd</option> 
-  <option value="Aster Medipharm">Aster Medipharm</option> 
-  <option value="Puremed Biotech">Puremed Biotech</option> 
-  <option value="Generic">Generic Product</option> 
+  <option className='option1' value="Torrent Pharma">Torrent Pharma</option>
+  <option id='option1' value="Nulife Pharmacueticals">Nulife Pharmacueticals</option>
+  <option id='option1' value="Kivi Labs">Kivi Labs</option>
+  <option id='option1' value="Juggat Pharma">Juggat Pharma</option>
+  <option id='option1' value="Bsa Pharma">Bsa Pharma</option>
+  <option id='option1' value="Dr Trust">Dr Trust</option>
+  <option id='option1' value="Lyra Laboratories">Lyra Laboratories</option>
+  <option id='option1' value="PandG">P {'&'} G</option>
+  <option id='option1' value="Jagdale Industries">Jagdale Industries</option>
+  <option id='option1' value="Sundyota Numandis">Sundyota Numandis</option> 
+  <option id='option1' value="Mcw Healthcare">Mcw Healthcare</option> 
+  <option id='option1' value="Indechemie">Indechemie</option> 
+  <option id='option1' value="Frenz Biotech">Frenz Biotech</option> 
+  <option id='option1' value="Pharmed Ltd">Pharmed Ltd</option> 
+  <option id='option1' value="Aster Medipharm">Aster Medipharm</option> 
+  <option id='option1' value="Puremed Biotech">Puremed Biotech</option> 
+  <option id='option1' value="Generic">Generic Product</option> 
 
  
  
@@ -131,7 +132,7 @@ alert(error.message);
         <br />
         <label form="category">Choose Product Category</label>
 
-<select name="Categories" id="categories"
+<select name="Categories"  id="brand"
      onChange={(e) => {setItemCategory(e.target.value)}}
 >
 <option value="select">Select</option>
@@ -146,7 +147,7 @@ alert(error.message);
 
 <label form="bestselling">Best Selling</label>
 
-<select name="selectbestselling" id="selectbestselling"
+<select name="selectbestselling" id="brand"
      onChange={(e) => {setBestSelling(e.target.value)}}
 >
 <option value="select2">Select</option>
@@ -158,7 +159,7 @@ alert(error.message);
 
 <label form="musthave">Must Have</label>
 
-<select name="selectmusthave" id="selectmusthave"
+<select name="selectmusthave" id="brand"
      onChange={(e) => {setMustHave(e.target.value)}}
 >
 <option value="select3">Select</option>

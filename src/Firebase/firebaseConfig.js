@@ -2,11 +2,13 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
 import {getStorage} from 'firebase/storage'
+import firebase from 'firebase/compat/app';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import "firebase/compat/auth";
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDjrtHkhuxWM4LOsiF9wv8atTXODL17npw",
   authDomain: "deliverapp1-ad3ea.firebaseapp.com",
   projectId: "deliverapp1-ad3ea",
@@ -20,4 +22,4 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-export {db,storage};
+export {db,storage,firebase};

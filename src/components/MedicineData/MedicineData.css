@@ -100,7 +100,7 @@ margin-right: 20px;
 
 }
 
-rder-row_card{
+.order-row_card{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -136,9 +136,49 @@ rder-row_card{
     margin: 10px;
 }
 
-@media screen (min-width: 408px) {
-    .container {
-        width: 208px;
+.in {
+    color: #293dcd;
+    font-weight: bold;
+}
+.out {
+    color: #eb5809;
+}
 
-    }
+
+@media (max-width:30.75rem){
+
+    
+.order-head1{
+    text-align: center;
+    font-size: 100%;
+    color:red;
+    margin: 1rem;
+}
+
+.order-s1{
+    display: flex;
+    flex-direction: row;
+margin: 1rem 1rem 1rem 1rem;
+}
+
+.order-s1-in{
+    width: 30%;
+}
+
+.search-bar{
+    width: 70%;
+    
+}
+#inputsort{
+    width: 50%;
+}
+.order-row_card1{
+    font-size: 50%;
+}
+.order-row_card{
+    font-size: 50%;
+}
+button{
+font-size: 1rem;
+}
 }
