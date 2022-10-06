@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import './AddData.css'
 
 import { db,storage } from '../Firebase/firebaseConfig';
-import { addDoc,collection } from 'firebase/firestore';
+import { addDoc,collection ,getDocs} from 'firebase/firestore';
 import {ref,uploadBytes, getDownloadURL} from 'firebase/storage'
 
 import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
 
 const AddData = () => {
-
+const [allbrands, setAllBrands] = useState([]);
     const [itemName ,setItemName] = useState('');
     const [itemDescription ,setItemDescription] = useState('');
     const [itemComposition ,setItemComposition] = useState('');
     const [itemPrice ,setItemPrice] = useState('');
     const [itemBrandName ,setItemBrandName] = useState('');
     const [itemImage ,setItemImage] = useState(null);
+    const [itemMrp ,setItemMrp] = useState('');
     // const [itemImage2 ,setItemImage2] = useState(null);
     // const [itemImage3 ,setItemImage3] = useState(null);
     const [itemCategory ,setItemCategory] = useState('');
@@ -49,6 +51,7 @@ const AddData = () => {
         itemDescription,
         itemPrescription,
         itemPrice,
+        itemMrp,
         bestSelling,
         mustHave,
         itemImageUrl: url,
@@ -86,14 +89,38 @@ alert(error.message);
     
    }
 
+
+
+
+   const getallbrands = async () => {
+    setAllBrands([]);
+    const querySnapshot = await getDocs(collection(db, "Brands"));
+    querySnapshot.forEach((doc) => {
+    //  console.log(doc.id, " => ",doc.data());
+      setAllBrands((prev) => [...prev,doc.data()])
+
+    })
+
+
+}
+useEffect(() => {
+
+getallbrands();
+
+},[])
+
   
 
-    console.log(itemName,itemBrandName,itemCategory,itemComposition,itemDescription,itemPrescription,itemPrice,itemImage)
+   // console.log(itemName,itemBrandName,itemCategory,itemComposition,itemDescription,itemPrescription,itemPrice,itemImage)
     return (
       <div>
 <Navbar/>
   <div className='form-outer'>
        <h1>Add Data</h1>
+       
+    
+
+
        <form className='form-inner'>
         <label>Item Name</label>
         <input type='text' name='item_name' className='inputtag'
@@ -105,7 +132,7 @@ alert(error.message);
      onChange={(e) => {setItemBrandName(e.target.value)}}
 >
 <option value="selectbrand">Select Brand</option>
-  <option className='option1' value="Torrent Pharma">Torrent Pharma</option>
+  {/* <option className='option1' value="Torrent Pharma">Torrent Pharma</option>
   <option id='option1' value="Nulife Pharmacueticals">Nulife Pharmacueticals</option>
   <option id='option1' value="Kivi Labs">Kivi Labs</option>
   <option id='option1' value="Juggat Pharma">Juggat Pharma</option>
@@ -121,8 +148,12 @@ alert(error.message);
   <option id='option1' value="Pharmed Ltd">Pharmed Ltd</option> 
   <option id='option1' value="Aster Medipharm">Aster Medipharm</option> 
   <option id='option1' value="Puremed Biotech">Puremed Biotech</option> 
-  <option id='option1' value="Generic">Generic Product</option> 
-
+  <option id='option1' value="Generic">Generic Product</option>  */}
+   {allbrands.map((brand) => {
+        return(
+        <option value={brand.BrandName}>{brand.BrandName}</option>
+        ) 
+      })}
  
  
   
@@ -215,17 +246,26 @@ alert(error.message);
         <br /> */}
 
         <label>Price</label>
-        <input type='text' name='item_price'
+        <input type='number' name='item_price'
         className='inputtag'
+        placeholder='0'
         onChange={(e) => {setItemPrice(e.target.value)}}
         />
         <br />
 
+        <label>M.R.P</label>
+        
+        <input type='number' name='item_price'
+        className='inputtag'
+        placeholder='0'
+        onChange={(e) => {setItemMrp(e.target.value)}}
+        />
+        <br />
       
         <button onClick={handleSubmit}>Add Item</button>
        </form>
     </div>
-
+    <Footer />
       </div>
    
   )

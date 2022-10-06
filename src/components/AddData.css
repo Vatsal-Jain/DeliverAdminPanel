@@ -1,3 +1,7 @@
+/* body{
+    background-color:royalblue
+} */
+
 .form-outer{
     display: flex;
     width: 70%;
@@ -7,6 +11,7 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+   
 }
 
 .form-outer .form-inner{
